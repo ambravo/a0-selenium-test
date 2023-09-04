@@ -1,0 +1,15 @@
+{
+  "name": "a0-selenium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "selenium-webdriver": "^4.12.0"
+  }
+}
