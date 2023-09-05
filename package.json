@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "assert": "^2.0.0",
     "selenium-webdriver": "^4.12.0"
   }
 }

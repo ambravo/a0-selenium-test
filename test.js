@@ -1,12 +1,16 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
-const assert = require('assert')
+const chrome = require('selenium-webdriver/chrome');
 
 describe('Test 1', function() {
   this.timeout(30000)
   let driver
-  let vars
   beforeEach(async function() {
-    driver = await new Builder().forBrowser('chrome').build()
+    const options = new chrome.Options();
+    options.addArguments('--headless'); 
+
+    driver = await new Builder().forBrowser('chrome')
+    .setChromeOptions(options)
+    .build()
     vars = {}
   })
   afterEach(async function() {
@@ -22,7 +26,7 @@ describe('Test 1', function() {
     await driver.findElement(By.id("username")).sendKeys("user01@a0.gg")
     await driver.findElement(By.id("password")).click()
     await driver.findElement(By.id("password")).sendKeys("ThisIsMyLongPww123..")
-    await driver.findElement(By.css(".cd6a2dc65")).click()
-
+    await driver.findElement(By.id("password")).sendKeys(Key.ENTER)
+    
   })
 })
